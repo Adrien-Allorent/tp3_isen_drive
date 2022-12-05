@@ -1,8 +1,7 @@
 const { MongoClient } = require('mongodb');
 require('dotenv').config()
-const args = process.argv.slice(2);
-const url = args[0] ?? process.env.MONGODB_URI;
-const dbName = args[1] ?? "isen_drive";
+const url = process.env.MONGODB_URI;
+const dbName = "isen_drive";
 const client = new MongoClient(url);
 const debug = require('debug')('http');
 const debug2 = require('debug')('mongo');

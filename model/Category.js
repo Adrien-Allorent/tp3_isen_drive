@@ -3,9 +3,8 @@ const Product = require("./Product.js")
 const { MongoClient, ObjectID} = require('mongodb');
 
 
-const args = process.argv.slice(2);
-const url = args[0] ?? process.env.MONGODB_URI;
-const dbName = args[1] ?? "isen_drive";
+const url = process.env.MONGODB_URI;
+const dbName = "isen_drive";
 const client = new MongoClient(url);
 const db = client.db(dbName);
 const categoriesColl = db.collection('categories');
